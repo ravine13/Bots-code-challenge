@@ -1,4 +1,7 @@
 import React from "react";
+// import BotSpecs from "./BotSpec";
+
+
 
 const botTypeClasses = {
   Assault: "icon military",
@@ -71,6 +74,7 @@ function BotCard({ bots,setBots,bot,army,setArmy}) {
             <div className="ui center aligned segment basic">
             </div>
           </span>
+        {/* <BotSpecs bot={bot} /> */}
         </div>
       </div>
     </div>

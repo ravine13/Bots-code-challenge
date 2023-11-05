@@ -23,3 +23,22 @@ body {
   padding: 0px 20px;
   
 }
+.bot-army-container {
+  background-color: greenyellow;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  min-height: 300px;
+  max-width: 100%;
+}
+.bot-army-row {
+  
+}
+
+.bot-card {
+  background-color: darkgreen; 
+  border: 1px solid #333; 
+  border-radius: 5px; 
+  padding: 10px; 
+  margin: 10px; 
+}
