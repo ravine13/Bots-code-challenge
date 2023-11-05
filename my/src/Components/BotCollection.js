@@ -9,13 +9,13 @@ function BotCollection({army,setArmy}) {
     fetch(' http://localhost:3000/bots')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setBots(data);
       });
   }, []);
 
   return (
-    <div className="ui four column grid">
+    <div className="ui four column grid bot-card-container">
       <div className="row">
         {bots.map((bot) => {
           return <BotCard bots={bots} setBots={setBots} bot={bot} army={army} setArmy={setArmy}/>

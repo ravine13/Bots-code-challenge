@@ -1,5 +1,4 @@
 import React from "react";
-// import BotSpecs from "./BotSpec";
 
 
 
@@ -74,7 +73,6 @@ function BotCard({ bots,setBots,bot,army,setArmy}) {
             <div className="ui center aligned segment basic">
             </div>
           </span>
-        {/* <BotSpecs bot={bot} /> */}
         </div>
       </div>
     </div>
