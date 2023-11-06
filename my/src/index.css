@@ -23,19 +23,4 @@ body {
   padding: 0px 20px;
   
 }
-/* .bot-army-container {
-  background-color: greenyellow;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  min-height: 300px;
-  max-width: 100%;
-}
-.bot-card {
-  flex: 1;
-  margin: 5px;  
-}
-.bot-card-container {
-  display: flex;
-  flex-wrap: wrap; 
-} */
+

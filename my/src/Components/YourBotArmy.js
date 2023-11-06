@@ -8,16 +8,16 @@ function YourBotArmy({ army, setArmy }) {
   }
 
   return (
-    <div className="ui segment inverted olive">
+    <div className="ui segment inverted olive" style={{ background: "green" }}>
       <div className="ui five column grid">
         <div className="row bot-army-row">Your Bot Army</div>
       </div>
       <div className="row">
-        <div className="ui five column grid"> 
+        <div className="ui five column grid">
           {army.length > 0 &&
             army.map((bot) => (
               <div className="ui column" key={bot.id}>
-                <div className="bot-card">
+                <div className="bot-card" style={{ color: "white" }}>
                   <img src={bot.avatar_url} alt={bot.name} onClick={() => RemoveBot(bot)} />
                   <p>{bot.name}</p>
                   <p>

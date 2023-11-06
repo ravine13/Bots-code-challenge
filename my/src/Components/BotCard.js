@@ -17,6 +17,9 @@ function BotCard({ bots, setBots, bot, army, setArmy }) {
   }
 
   function removeBot(bot) {
+    if (army.includes(bot)) {
+      setArmy(army.filter((el) => el !== bot));
+    }
     setBots(bots.filter((el) => el !== bot));
     fetch('http://localhost:3000/bots/' + bot.id, {
       method: 'DELETE',
@@ -42,12 +45,6 @@ function BotCard({ bots, setBots, bot, army, setArmy }) {
           </div>
         </div>
         <div className="extra content">
-          <button
-            className="ui mini red button"
-            onClick={() => removeBot(bot)}
-          >
-            Remove
-          </button>
           <span>
             <i className="icon heartbeat" />
             {bot.health}
@@ -64,6 +61,15 @@ function BotCard({ bots, setBots, bot, army, setArmy }) {
             <div className="ui center aligned segment basic"></div>
           </span>
         </div>
+        <button
+          className="ui mini red button"
+          onClick={(e) => {
+            e.stopPropagation(); 
+            removeBot(bot);
+          }}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
