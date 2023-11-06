@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const botTypeClasses = {
   Assault: "icon military",
   Defender: "icon shield",
@@ -11,38 +9,26 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-
-function BotCard({ bots,setBots,bot,army,setArmy}) {
+function BotCard({ bots, setBots, bot, army, setArmy }) {
   function AddArmy(bot) {
     if (!army.includes(bot)) {
-      // console.log(army)
       setArmy([...army, bot]);
-      
     }
   }
-  function removeBot(bot){
-    setBots(bots.filter(el =>el !== bot))
-    fetch('http://localhost:3000/bots/' + bot.id,{
-    method : 'DELETE',
-    headers : {
-      "content-Type": "application/json"
-    }
-    })
+
+  function removeBot(bot) {
+    setBots(bots.filter((el) => el !== bot));
+    fetch('http://localhost:3000/bots/' + bot.id, {
+      method: 'DELETE',
+      headers: {
+        "content-Type": "application/json",
+      },
+    });
   }
-  <button
-  className="ui mini red button"
-  onClick={() => removeBot(bot)}
->
-  Remove
-</button>
 
   return (
     <div className="ui column">
-      <div
-        className="ui card"
-        key={bot.id}
-        onClick={() => AddArmy(bot)}
-      >
+      <div className="ui card" key={bot.id} onClick={() => AddArmy(bot)}>
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
         </div>
@@ -56,11 +42,16 @@ function BotCard({ bots,setBots,bot,army,setArmy}) {
           </div>
         </div>
         <div className="extra content">
+          <button
+            className="ui mini red button"
+            onClick={() => removeBot(bot)}
+          >
+            Remove
+          </button>
           <span>
             <i className="icon heartbeat" />
             {bot.health}
           </span>
-
           <span>
             <i className="icon lightning" />
             {bot.damage}
@@ -70,8 +61,7 @@ function BotCard({ bots,setBots,bot,army,setArmy}) {
             {bot.armor}
           </span>
           <span>
-            <div className="ui center aligned segment basic">
-            </div>
+            <div className="ui center aligned segment basic"></div>
           </span>
         </div>
       </div>
