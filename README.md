@@ -14,12 +14,11 @@ This is a simple React application that allows you to manage a bot army. You can
    Change to the project directory:
 
 
-cd your-bot-army-react-app
-Install the required dependencies:
+cd into "my"
+Install the required dependencies(npm install):
 
-npm install
-Start the development server:
-
+cd into src 
+start the the server ( npx json-server --watch db.json)
 
 npm start
 Open your web browser and go to http://localhost:3000 to use the app.
